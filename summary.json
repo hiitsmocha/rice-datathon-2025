@@ -1,0 +1,185 @@
+{
+    "shape": [
+        41053,
+        10
+    ],
+    "columns": [
+        "Date",
+        "Vehicle Category",
+        "GVWR Class",
+        "Fuel Type",
+        "Model Year",
+        "Fuel Technology",
+        "Electric Mile Range",
+        "Number of Vehicles Registered at the Same Address",
+        "Region",
+        "Vehicle Population"
+    ],
+    "missing_values": {
+        "Date": 0,
+        "Vehicle Category": 0,
+        "GVWR Class": 0,
+        "Fuel Type": 0,
+        "Model Year": 603,
+        "Fuel Technology": 0,
+        "Electric Mile Range": 0,
+        "Number of Vehicles Registered at the Same Address": 0,
+        "Region": 0,
+        "Vehicle Population": 0
+    },
+    "describe": {
+        "Date": {
+            "count": 41053.0,
+            "mean": 2020.9853116702798,
+            "std": 1.3984699443176343,
+            "min": 2019.0,
+            "25%": 2020.0,
+            "50%": 2021.0,
+            "75%": 2022.0,
+            "max": 2023.0
+        },
+        "Vehicle Category": {
+            "count": 41053,
+            "unique": 13,
+            "top": "T6",
+            "freq": 8705
+        },
+        "GVWR Class": {
+            "count": 41053,
+            "unique": 10,
+            "top": "Not Applicable",
+            "freq": 14202
+        },
+        "Fuel Type": {
+            "count": 41053,
+            "unique": 6,
+            "top": "Gasoline",
+            "freq": 18388
+        },
+        "Model Year": {
+            "count": 40450.0,
+            "mean": 2002.07587144623,
+            "std": 13.462657590949414,
+            "min": 1975.0,
+            "25%": 1991.0,
+            "50%": 2003.0,
+            "75%": 2014.0,
+            "max": 2026.0
+        },
+        "Fuel Technology": {
+            "count": 41053,
+            "unique": 4,
+            "top": "ICE",
+            "freq": 37098
+        },
+        "Electric Mile Range": {
+            "count": 41053,
+            "unique": 6,
+            "top": "Not Applicable",
+            "freq": 37098
+        },
+        "Number of Vehicles Registered at the Same Address": {
+            "count": 41053,
+            "unique": 5,
+            "top": ">=4",
+            "freq": 12076
+        },
+        "Region": {
+            "count": 41053,
+            "unique": 1,
+            "top": "Statewide",
+            "freq": 41053
+        },
+        "Vehicle Population": {
+            "count": 41053.0,
+            "mean": 3463.9295057608456,
+            "std": 18833.8393018588,
+            "min": 1.0,
+            "25%": 5.0,
+            "50%": 39.0,
+            "75%": 390.0,
+            "max": 395883.0
+        }
+    },
+    "num_columns": 10,
+    "distinct_values": {
+        "Date": 5,
+        "Vehicle Category": 13,
+        "GVWR Class": 10,
+        "Fuel Type": 6,
+        "Model Year": 52,
+        "Fuel Technology": 4,
+        "Electric Mile Range": 6,
+        "Number of Vehicles Registered at the Same Address": 5,
+        "Region": 1,
+        "Vehicle Population": 6232
+    },
+    "columns_with_few_distinct_values": {
+        "Date": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023
+        ],
+        "Vehicle Category": [
+            "P",
+            "T2",
+            "T3",
+            "T1",
+            "MC",
+            "T4",
+            "T7",
+            "T6",
+            "T5",
+            "MH",
+            "BS",
+            "B",
+            "BT"
+        ],
+        "GVWR Class": [
+            "Not Applicable",
+            1,
+            2,
+            "Unknown",
+            8,
+            3,
+            5,
+            6,
+            7,
+            4
+        ],
+        "Fuel Type": [
+            "Gasoline",
+            "Electric",
+            "Diesel",
+            "Natural Gas",
+            "Hydrogen",
+            "Unknown"
+        ],
+        "Fuel Technology": [
+            "ICE",
+            "BEV",
+            "PHEV",
+            "FCEV"
+        ],
+        "Electric Mile Range": [
+            "Not Applicable",
+            ">150 miles",
+            "0 to 50 miles",
+            "51 to 100 miles",
+            "101 to 150 miles",
+            "Unknown"
+        ],
+        "Number of Vehicles Registered at the Same Address": [
+            ">=4",
+            1,
+            2,
+            3,
+            "Unknown"
+        ],
+        "Region": [
+            "Statewide"
+        ]
+    }
+}
