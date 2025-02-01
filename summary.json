@@ -30,6 +30,9 @@
     "describe": {
         "Date": {
             "count": 41053.0,
+            "unique": NaN,
+            "top": NaN,
+            "freq": NaN,
             "mean": 2020.9853116702798,
             "std": 1.3984699443176343,
             "min": 2019.0,
@@ -42,22 +45,46 @@
             "count": 41053,
             "unique": 13,
             "top": "T6",
-            "freq": 8705
+            "freq": 8705,
+            "mean": NaN,
+            "std": NaN,
+            "min": NaN,
+            "25%": NaN,
+            "50%": NaN,
+            "75%": NaN,
+            "max": NaN
         },
         "GVWR Class": {
             "count": 41053,
             "unique": 10,
             "top": "Not Applicable",
-            "freq": 14202
+            "freq": 14202,
+            "mean": NaN,
+            "std": NaN,
+            "min": NaN,
+            "25%": NaN,
+            "50%": NaN,
+            "75%": NaN,
+            "max": NaN
         },
         "Fuel Type": {
             "count": 41053,
             "unique": 6,
             "top": "Gasoline",
-            "freq": 18388
+            "freq": 18388,
+            "mean": NaN,
+            "std": NaN,
+            "min": NaN,
+            "25%": NaN,
+            "50%": NaN,
+            "75%": NaN,
+            "max": NaN
         },
         "Model Year": {
             "count": 40450.0,
+            "unique": NaN,
+            "top": NaN,
+            "freq": NaN,
             "mean": 2002.07587144623,
             "std": 13.462657590949414,
             "min": 1975.0,
@@ -70,28 +97,59 @@
             "count": 41053,
             "unique": 4,
             "top": "ICE",
-            "freq": 37098
+            "freq": 37098,
+            "mean": NaN,
+            "std": NaN,
+            "min": NaN,
+            "25%": NaN,
+            "50%": NaN,
+            "75%": NaN,
+            "max": NaN
         },
         "Electric Mile Range": {
             "count": 41053,
             "unique": 6,
             "top": "Not Applicable",
-            "freq": 37098
+            "freq": 37098,
+            "mean": NaN,
+            "std": NaN,
+            "min": NaN,
+            "25%": NaN,
+            "50%": NaN,
+            "75%": NaN,
+            "max": NaN
         },
         "Number of Vehicles Registered at the Same Address": {
             "count": 41053,
             "unique": 5,
-            "top": ">=4",
-            "freq": 12076
+            "top": "\u22654",
+            "freq": 12076,
+            "mean": NaN,
+            "std": NaN,
+            "min": NaN,
+            "25%": NaN,
+            "50%": NaN,
+            "75%": NaN,
+            "max": NaN
         },
         "Region": {
             "count": 41053,
             "unique": 1,
             "top": "Statewide",
-            "freq": 41053
+            "freq": 41053,
+            "mean": NaN,
+            "std": NaN,
+            "min": NaN,
+            "25%": NaN,
+            "50%": NaN,
+            "75%": NaN,
+            "max": NaN
         },
         "Vehicle Population": {
             "count": 41053.0,
+            "unique": NaN,
+            "top": NaN,
+            "freq": NaN,
             "mean": 3463.9295057608456,
             "std": 18833.8393018588,
             "min": 1.0,
@@ -172,7 +230,7 @@
             "Unknown"
         ],
         "Number of Vehicles Registered at the Same Address": [
-            ">=4",
+            "\u22654",
             1,
             2,
             3,
