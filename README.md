@@ -72,6 +72,7 @@ data.isnull().sum()
 ```
 **Explanation** : We use data.shape to get the dimensions, data.info() to see column types, and data.isnull().sum() to check for missing values.
 
+![alt text](<data/findings/Screenshot 2025-02-02 at 10.01.42 AM.png>) ![alt text](<data/findings/Screenshot 2025-02-02 at 10.01.37 AM.png>) ![alt text](<data/findings/Screenshot 2025-02-02 at 10.01.22 AM.png>) ![alt text](<data/findings/Screenshot 2025-02-02 at 10.01.10 AM.png>) ![alt text](<data/findings/Screenshot 2025-02-02 at 10.00.57 AM.png>) ![alt text](<data/findings/Screenshot 2025-02-02 at 10.00.25 AM.png>) ![alt text](<data/findings/Screenshot 2025-02-02 at 10.00.17 AM.png>)
 ### Step 3: Handle Missing Values
 
 We handle missing values by filling numerical columns with the median and categorical columns with the mode.
