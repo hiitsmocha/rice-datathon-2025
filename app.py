@@ -124,11 +124,7 @@ if selected_section == "data_wrangling":
     st.code(code_step1, language="python")
     st.write("**Explanation**: The dataset is loaded using `pd.read_csv()`, and the first 5 rows are displayed using `data.head()`.")
     st.write("### 🔍 Raw Dataset Preview")
-<<<<<<< HEAD
     raw_data = pd.read_excel("data/training.xlsx")
-=======
-    raw_data = pd.read_excel("rice-datathon-2025/data/training.xlsx")
->>>>>>> origin/phan-branch
     st.dataframe(raw_data.head())  # Show first 5 rows
     
     # Step 2: Basic Information about the Dataset
@@ -196,7 +192,7 @@ elif selected_section == "eda":
     st.title("📊 Exploratory Data Analysis")
     
     # Load Data
-    data = pd.read_csv("rice-datathon-2025/data/train_and_val.csv")
+    data = pd.read_csv("data/train_and_val.csv")
     # st.write("### 🔍 Raw Dataset Preview")
     # st.dataframe(data.head())  # Show first 5 rows
 
