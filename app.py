@@ -69,21 +69,20 @@ sections = {
     "📊 EDA": "eda",
     "⚙️ Model Selection": "model_selection",
     "📈 Result Interpretation": "result_interpretation",
-    "🔧 Technical Challenges": "technical_challenges",
-    "🌍 Social Impact": "social_impact",
-    "AI assistant": "ai_assistant"
+    "🤖 AI assistant": "ai_assistant"
 }
 
+# Initialize session state for selected_section
+if "selected_section" not in st.session_state:
+    st.session_state.selected_section = "data_wrangling"
+
 # Sidebar buttons
-selected_section = None
 for label, key in sections.items():
-    if st.sidebar.button(label):
-        selected_section = key
+    if st.sidebar.button(label, key=key):
+        st.session_state.selected_section = key  # Store selection in session state
 
-# Default section (first one)
-if selected_section is None:
-    selected_section = "data_wrangling"
-
+# Retrieve the selected section
+selected_section = st.session_state.selected_section
 # Data Wrangling
 if selected_section == "data_wrangling":
     st.title("🏗️ Data Wrangling")
@@ -125,7 +124,8 @@ if selected_section == "data_wrangling":
     st.code(code_step1, language="python")
     st.write("**Explanation**: The dataset is loaded using `pd.read_csv()`, and the first 5 rows are displayed using `data.head()`.")
     st.write("### 🔍 Raw Dataset Preview")
-    st.dataframe(data.drop(columns = ["Vehicle Age"]).head())  # Show first 5 rows
+    raw_data = pd.read_excel("/Users/trongphan/Downloads/Rice_Datathon/rice-datathon-2025/data/training.xlsx")
+    st.dataframe(raw_data.head())  # Show first 5 rows
     
     # Step 2: Basic Information about the Dataset
     st.header("Step 2: Basic Information about the Dataset")
@@ -193,8 +193,8 @@ elif selected_section == "eda":
     
     # Load Data
     data = pd.read_csv("/Users/trongphan/Downloads/Rice_Datathon/rice-datathon-2025/data/train_and_val.csv")
-    st.write("### 🔍 Raw Dataset Preview")
-    st.dataframe(data.head())  # Show first 5 rows
+    # st.write("### 🔍 Raw Dataset Preview")
+    # st.dataframe(data.head())  # Show first 5 rows
 
     # Step 6: Feature Engineering
     st.header("Step 6: Feature Engineering")
@@ -276,9 +276,12 @@ elif selected_section == "eda":
     st.write("The dataset has been cleaned, preprocessed, and is now ready for modeling. The EDA process included handling missing values, converting data types, removing duplicates, creating new features, and visualizing relationships between variables.")
 
     st.write("### 📌 Processed Dataset Preview")
-    st.dataframe(data.head())
+    final_data = pd.read_csv("/Users/trongphan/Downloads/Rice_Datathon/rice-datathon-2025/data/X_train.csv")
+    st.dataframe(final_data.head())
 # Assuming the user has selected model selection
 elif selected_section == "model_selection":
+    st.warning("""📌 Intuition: We aim to predict the vehicle population using machine learning models. We'll train Random Forest, CatBoost, and XGBoost models, tune hyperparameters, and stack models to improve performance.
+               The reason why we chose these models is that they are robust, handle non-linear relationships well, and are suitable for regression tasks, especially all the features are categorical data.""")
     st.title("⚙️ Random Forest")
 
     # Step 1: Training the Random Forest Model
@@ -626,30 +629,9 @@ elif selected_section == "result_interpretation":
         "y_test": [16, 582, 73, 4, 16, 520, 15, 44018, 508, 500],
         "y_pred": [36.09, 303.40, 31.57, 1.42, 22.95, -77.27, 129.97, 162.68, -147.48, 52.60]
     })
-
     st.write("#### Tuned XGBoost Predictions")
     st.dataframe(xgb_sample_predictions)
-
-
-
-# Technical & Challenges
-elif selected_section == "technical_challenges":
-    st.title("🔧 Technical Challenges")
-    st.write("### 📌 Key Challenges Faced")
-    st.markdown("""
-    - Handling **missing data** efficiently.
-    - Encoding **categorical variables** correctly.
-    - Choosing an **optimal ML model**.
-    """)
-
-# Social Impact
-elif selected_section == "social_impact":
-    st.title("🌍 Social Impact")
-    st.write("### 📌 Why This Matters")
-    st.markdown("""
-    - 📈 **Improves decision-making** with real-world insights.
-    - 🌱 **Environmental impact analysis** for sustainability.
-    """)
+    
 
 elif selected_section == "ai_assistant":
     st.title("🤖 AI Assistant")
