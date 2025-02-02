@@ -154,6 +154,7 @@ plt.show()
 
 #### 🔍 Vehicle Age vs. Population
 
+![alt text](image.png)
 
 #### 📌 Insights
 
