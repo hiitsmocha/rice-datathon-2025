@@ -58,7 +58,7 @@ st.markdown("""
 @st.cache_data
 def load_data():
     with st.spinner("📥 Loading dataset... Please wait!"):
-        return pd.read_csv("/Users/trongphan/Downloads/Rice_Datathon/rice-datathon-2025/data/train_and_val.csv")
+        return pd.read_csv("train_and_val.csv")
 
 # Sidebar Navigation
 st.sidebar.image("https://glasscock.rice.edu/sites/g/files/bxs2991/files/2020-07/Rice_Owl_Flat_280_Blue.png", width=100)
@@ -124,7 +124,7 @@ if selected_section == "data_wrangling":
     st.code(code_step1, language="python")
     st.write("**Explanation**: The dataset is loaded using `pd.read_csv()`, and the first 5 rows are displayed using `data.head()`.")
     st.write("### 🔍 Raw Dataset Preview")
-    raw_data = pd.read_excel("/Users/trongphan/Downloads/Rice_Datathon/rice-datathon-2025/data/training.xlsx")
+    raw_data = pd.read_excel("data/training.xlsx")
     st.dataframe(raw_data.head())  # Show first 5 rows
     
     # Step 2: Basic Information about the Dataset
