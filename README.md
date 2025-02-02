@@ -1,4 +1,3 @@
-```markdown
 # 🌙 Rice Datathon 2025 - OwlNighter 🦉  
 
 Welcome to the **OwlNighter** team repository for **Rice Datathon 2025**!  
