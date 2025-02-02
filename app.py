@@ -58,7 +58,7 @@ st.markdown("""
 @st.cache_data
 def load_data():
     with st.spinner("📥 Loading dataset... Please wait!"):
-        return pd.read_csv("/Users/trongphan/Downloads/Rice_Datathon/rice-datathon-2025/data/train_and_val.csv")
+        return pd.read_csv("rice-datathon-2025/train_and_val.csv")
 
 # Sidebar Navigation
 st.sidebar.image("https://glasscock.rice.edu/sites/g/files/bxs2991/files/2020-07/Rice_Owl_Flat_280_Blue.png", width=100)
@@ -124,7 +124,7 @@ if selected_section == "data_wrangling":
     st.code(code_step1, language="python")
     st.write("**Explanation**: The dataset is loaded using `pd.read_csv()`, and the first 5 rows are displayed using `data.head()`.")
     st.write("### 🔍 Raw Dataset Preview")
-    raw_data = pd.read_excel("/Users/trongphan/Downloads/Rice_Datathon/rice-datathon-2025/data/training.xlsx")
+    raw_data = pd.read_excel("rice-datathon-2025/data/training.xlsx")
     st.dataframe(raw_data.head())  # Show first 5 rows
     
     # Step 2: Basic Information about the Dataset
@@ -192,7 +192,7 @@ elif selected_section == "eda":
     st.title("📊 Exploratory Data Analysis")
     
     # Load Data
-    data = pd.read_csv("/Users/trongphan/Downloads/Rice_Datathon/rice-datathon-2025/data/train_and_val.csv")
+    data = pd.read_csv("rice-datathon-2025/data/train_and_val.csv")
     # st.write("### 🔍 Raw Dataset Preview")
     # st.dataframe(data.head())  # Show first 5 rows
 
@@ -276,7 +276,7 @@ elif selected_section == "eda":
     st.write("The dataset has been cleaned, preprocessed, and is now ready for modeling. The EDA process included handling missing values, converting data types, removing duplicates, creating new features, and visualizing relationships between variables.")
 
     st.write("### 📌 Processed Dataset Preview")
-    final_data = pd.read_csv("/Users/trongphan/Downloads/Rice_Datathon/rice-datathon-2025/data/X_train.csv")
+    final_data = pd.read_csv("rice-datathon-2025/data/X_train.csv")
     st.dataframe(final_data.head())
 # Assuming the user has selected model selection
 elif selected_section == "model_selection":
