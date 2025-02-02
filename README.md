@@ -36,6 +36,7 @@ streamlit run app.py
 
 Click here [https://youtu.be/3_inqfvuuO0] to watch our demo video!  
 
+BELOW ARE OUR FINDINGS IN THIS PROJECT. SOME OF THE IMAGES/TABLES MIGHT NOT WORK ON YOUR MACHINE. PLEASE RUN STREAMLIT LOCALLY TO HAVE THE BEST EXPERIENCE
 ## 🏗 Data Wrangling
 
 ### Step 1: Load and Display the Dataset
