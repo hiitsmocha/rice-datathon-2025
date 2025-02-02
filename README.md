@@ -34,4 +34,9 @@ streamlit run app.py
 
 ## 🎬 Demo  
 
-[📺 Click here](#) to watch our demo video!  
+[📺 Click here][https://youtu.be/3_inqfvuuO0] to watch our demo video!  
+
+
+[text](<../../../../Downloads/Rice datathon_merged.pdf>)
+
+[def]: #
