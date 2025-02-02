@@ -70,7 +70,8 @@ sections = {
     "⚙️ Model Selection": "model_selection",
     "📈 Result Interpretation": "result_interpretation",
     "🔧 Technical Challenges": "technical_challenges",
-    "🌍 Social Impact": "social_impact"
+    "🌍 Social Impact": "social_impact",
+    "AI assistant": "ai_assistant"
 }
 
 # Sidebar buttons
@@ -87,9 +88,6 @@ if selected_section is None:
 if selected_section == "data_wrangling":
     st.title("🏗️ Data Wrangling")
     data = load_data()
-    
-    st.write("### 🔍 Raw Dataset Preview")
-    st.dataframe(data.drop(columns = ["Vehicle Age"]).head())  # Show first 5 rows
 
     # Drop Unnecessary Columns 
     if "Region" in data.columns:
@@ -118,14 +116,17 @@ if selected_section == "data_wrangling":
     st.write("First, we load the dataset and display the first few rows to understand its structure.")
     code_step1 = """
     # Load the dataset
-    data = pd.read_csv("your_dataset.csv")
+    data = pd.read_csv("our_dataset.csv")
 
     # Display the first 5 rows
     data.head()
     """
+
     st.code(code_step1, language="python")
     st.write("**Explanation**: The dataset is loaded using `pd.read_csv()`, and the first 5 rows are displayed using `data.head()`.")
-
+    st.write("### 🔍 Raw Dataset Preview")
+    st.dataframe(data.drop(columns = ["Vehicle Age"]).head())  # Show first 5 rows
+    
     # Step 2: Basic Information about the Dataset
     st.header("Step 2: Basic Information about the Dataset")
     st.write("Next, we check the dataset's shape, info, and missing values.")
@@ -456,7 +457,7 @@ elif selected_section == "model_selection":
 
     # Step 1: Stacking Random Forest and CatBoost
     st.title("⚙️ Stacking Multiple Models")
-
+    st.warning("📌 Intuition: Leveraging the strengths of multiple models to enhance overall performance. CatBoost is highly sensitive to extreme values, while Random Forest struggles with very small values. By combining these models, we aim to balance their strengths, improving both accuracy and robustness in our predictions.")
     st.write("### Method 1: Stacking Random Forest and CatBoost with Meta-Model (Linear Regression)")
     st.markdown("""
     In this method, we combine the predictions of Random Forest and CatBoost models by stacking them 
@@ -555,6 +556,7 @@ elif selected_section == "result_interpretation":
     st.title("📈 Result Interpretation")
     st.write("### 📌 Understanding Model Performance")
 
+    st.write("### Model Performance Metrics")
     st.markdown("""
     Below is a table summarizing the performance metrics of different models.
     """)
@@ -565,14 +567,15 @@ elif selected_section == "result_interpretation":
     results_df = pd.DataFrame({
         "Model": [
             "CatBoost Only",
-            "Random Forest Only",
+            "Base Random Forest",
             "Random Forest + CatBoost -> Linear Regression",
             "Two Random Forests -> Random Forest",
-            "Two Random Forests + CatBoost -> Random Forest"
+            "Two Random Forests + CatBoost -> Random Forest",
+            "Tuned XGBoost"
         ],
-        "Mean Absolute Error (MAE)": [2092.98, 559.86, 564.66, 559.90, 563.79],
-        "Root Mean Squared Error (RMSE)": [5661.89, 3730.61, 3757.97, 3719.93, 3736.97],
-        "R-squared (R2)": [0.9154, 0.9633, 0.9627, 0.9635, 0.9631]
+        "Mean Absolute Error (MAE)": [2092.98, 559.86, 564.66, 559.90, 563.79, 1075.45],
+        "Root Mean Squared Error (RMSE)": [5661.89, 3730.61, 3757.97, 3719.93, 3736.97, 6006.13],
+        "R-squared (R2)": [0.9154, 0.9633, 0.9627, 0.9635, 0.9631, 0.9061]
     })
 
     st.dataframe(results_df)
@@ -615,8 +618,18 @@ elif selected_section == "result_interpretation":
         "y_pred": [279491.90, 294791.51, 288526.82, 257626.26, 276024.33, 1.58, 2.75, 2.57, 3.35, 2.82]
     })
 
-    st.write("#### Two Random Forests Only Predictions")
+    st.write("#### Two Random Forests -> Random Forest Predictions")
     st.dataframe(rf_only_sample_predictions)
+
+    # Sample predictions from Tuned XGBoost
+    xgb_sample_predictions = pd.DataFrame({
+        "y_test": [16, 582, 73, 4, 16, 520, 15, 44018, 508, 500],
+        "y_pred": [36.09, 303.40, 31.57, 1.42, 22.95, -77.27, 129.97, 162.68, -147.48, 52.60]
+    })
+
+    st.write("#### Tuned XGBoost Predictions")
+    st.dataframe(xgb_sample_predictions)
+
 
 
 # Technical & Challenges
@@ -637,3 +650,101 @@ elif selected_section == "social_impact":
     - 📈 **Improves decision-making** with real-world insights.
     - 🌱 **Environmental impact analysis** for sustainability.
     """)
+
+elif selected_section == "ai_assistant":
+    st.title("🤖 AI Assistant")
+    st.write("### 📌 AI Assistant Features")
+    import streamlit as st
+    import pandas as pd
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    import google.generativeai as genai
+
+    # Configure Gemini API
+    genai.configure(api_key="AIzaSyDUZVf2L1nDjQ2Z9iLM12EWNROQnjuX-qU")
+    model = genai.GenerativeModel("gemini-1.5-flash")
+
+    # Initialize session memory
+    if "chat_history" not in st.session_state:
+        st.session_state["chat_history"] = []
+
+    st.title("📊 AI-Powered CSV Query & Visualization App")
+
+    # File uploader
+    uploaded_file = st.file_uploader("Upload your CSV file", type=["csv"])
+
+    if uploaded_file:
+        # Read CSV file
+        df = pd.read_csv(uploaded_file)
+        st.write("### 📂 Uploaded CSV Data Preview:")
+        st.dataframe(df.head())  # Show first few rows
+
+        # Show basic statistics
+        st.write("### 📊 Dataset Summary Statistics:")
+        st.write(df.describe())
+
+        # Visualization section
+        st.write("## 📈 Data Visualization")
+
+        # Let user choose column for visualization
+        numeric_columns = df.select_dtypes(include=["number"]).columns.tolist()
+        categorical_columns = df.select_dtypes(exclude=["number"]).columns.tolist()
+
+        if numeric_columns:
+            col_to_plot = st.selectbox("Select a numeric column for histogram:", numeric_columns)
+            
+            fig, ax = plt.subplots(figsize=(8, 5))
+            sns.histplot(df[col_to_plot], bins=30, kde=True, ax=ax)
+            ax.set_title(f"Histogram of {col_to_plot}")
+            st.pyplot(fig)
+
+        if categorical_columns:
+            col_to_plot = st.selectbox("Select a categorical column for bar chart:", categorical_columns)
+            
+            fig, ax = plt.subplots(figsize=(8, 5))
+            df[col_to_plot].value_counts().plot(kind="bar", ax=ax)
+            ax.set_title(f"Bar Chart of {col_to_plot}")
+            st.pyplot(fig)
+
+        # User query input
+        user_query = st.text_area("Ask a question about this data:")
+
+        if st.button("Get Answer"):
+            if user_query:
+                # Convert CSV data to text format
+                csv_text = df.to_csv(index=False)
+
+                # Construct Gemini prompt
+                prompt = f"""
+                You are an AI assistant analyzing a dataset. The user has uploaded the following CSV file:
+
+                {csv_text}
+
+                The user asks: "{user_query}"
+
+                Please analyze the data and provide an insightful response.
+                """
+                
+                # Get response from Gemini
+                response = model.generate_content(prompt)
+
+                # Save query & response to session memory
+                st.session_state["chat_history"].append({"query": user_query, "response": response.text})
+
+                # Display AI response
+                st.write("### 🤖 Gemini AI's Answer:")
+                st.write(response.text)
+            else:
+                st.warning("Please enter a query before clicking 'Get Answer'.")
+
+        # Show chat history
+        if st.session_state["chat_history"]:
+            st.write("## 📝 Chat History")
+            for chat in st.session_state["chat_history"]:
+                with st.expander(f"📌 {chat['query']}"):
+                    st.write(chat["response"])
+
+        # Option to clear memory
+        if st.button("Clear Chat History"):
+            st.session_state["chat_history"] = []
+            st.success("Chat history cleared!")
