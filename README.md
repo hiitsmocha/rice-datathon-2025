@@ -35,6 +35,3 @@ streamlit run app.py
 ## 🎬 Demo  
 
 [📺 Click here](#) to watch our demo video!  
-```
-
-Just **copy and paste** this into your `README.md`, and you're all set! 🚀
