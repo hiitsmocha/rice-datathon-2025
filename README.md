@@ -1,26 +1,41 @@
-# rice-datathon-2025
-This is the OwlNighter team repository for Rice Datathon 2025.
+```markdown
+# 🌙 Rice Datathon 2025 - OwlNighter 🦉  
 
-In the past 36 hours, we are solving the chevron challenge and achieving very satisfying root mean square error result. 
+Welcome to the **OwlNighter** team repository for **Rice Datathon 2025**!  
 
-### Team members
-- Nam Nguyen
-- Phan Nguyen
-- Huaijin Sun
-- Shunyuao Mao
+Over the past **36 hours**, we've tackled the **Chevron Challenge** and achieved an impressive **root mean square error** (RMSE) result. 🚀  
 
-### Installation
-- Clone the repository
-- https://github.com/hiitsmocha/rice-datathon-2025.git
+## 👥 Team Members  
+- **Nam Nguyen**  
+- **Phan Nguyen**  
+- **Huaijin Sun**  
+- **Shunyuao Mao**  
 
-- Install the requirements
-pip install -r requirements.txt
+## 📥 Installation  
 
-### Usage: You can run this on your own machine!
-- Run the app locally
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/hiitsmocha/rice-datathon-2025.git
+   cd rice-datathon-2025
+   ```
+
+2. Install dependencies:  
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## 🚀 Usage  
+
+You can run this project locally on your own machine!  
+
+Start the app with:  
+```bash
 streamlit run app.py
+```
 
-# DEMO
-Click Here to access our demo video
+## 🎬 Demo  
 
+[📺 Click here](#) to watch our demo video!  
+```
 
+Just **copy and paste** this into your `README.md`, and you're all set! 🚀
