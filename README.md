@@ -36,7 +36,4 @@ streamlit run app.py
 
 Click here [https://youtu.be/3_inqfvuuO0] to watch our demo video!  
 
-
-[text](<../../../../Downloads/Rice datathon_merged.pdf>)
-
-[def]: #
+![alt text](<data/findings/Screenshot 2025-02-02 at 9.43.02 AM.png>) ![alt text](<data/findings/Screenshot 2025-02-02 at 9.42.55 AM.png>) ![alt text](<data/findings/Screenshot 2025-02-02 at 9.42.47 AM.png>) ![alt text](<data/findings/Screenshot 2025-02-02 at 9.42.36 AM.png>) ![alt text](<data/findings/Screenshot 2025-02-02 at 9.42.25 AM.png>) ![alt text](<data/findings/Screenshot 2025-02-02 at 9.42.17 AM.png>) ![alt text](<data/findings/Screenshot 2025-02-02 at 9.42.07 AM.png>) ![alt text](<data/findings/Screenshot 2025-02-02 at 9.41.56 AM.png>) ![alt text](<data/findings/Screenshot 2025-02-02 at 9.41.41 AM.png>) ![alt text](<data/findings/Screenshot 2025-02-02 at 9.41.29 AM.png>) ![alt text](<data/findings/Screenshot 2025-02-02 at 9.41.20 AM.png>) ![alt text](<data/findings/Screenshot 2025-02-02 at 9.41.11 AM.png>) ![alt text](<data/findings/Screenshot 2025-02-02 at 9.40.52 AM.png>)
