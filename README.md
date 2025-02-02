@@ -36,6 +36,7 @@ streamlit run app.py
 
 Click here [https://youtu.be/3_inqfvuuO0] to watch our demo video!  
 
+BELOW ARE OUR FINDINGS IN THIS PROJECT. SOME OF THE IMAGES/TABLES MIGHT NOT WORK ON YOUR MACHINE. PLEASE RUN STREAMLIT LOCALLY TO HAVE THE BEST EXPERIENCE
 ## 🏗 Data Wrangling
 
 ### Step 1: Load and Display the Dataset
@@ -72,6 +73,7 @@ data.isnull().sum()
 ```
 **Explanation** : We use data.shape to get the dimensions, data.info() to see column types, and data.isnull().sum() to check for missing values.
 
+![alt text](<data/findings/Screenshot 2025-02-02 at 10.01.42 AM.png>) 
 ![alt text](<data/findings/Screenshot 2025-02-02 at 10.01.42 AM.png>) ![alt text](<data/findings/Screenshot 2025-02-02 at 10.01.37 AM.png>) ![alt text](<data/findings/Screenshot 2025-02-02 at 10.01.22 AM.png>) ![alt text](<data/findings/Screenshot 2025-02-02 at 10.01.10 AM.png>) ![alt text](<data/findings/Screenshot 2025-02-02 at 10.00.57 AM.png>) ![alt text](<data/findings/Screenshot 2025-02-02 at 10.00.25 AM.png>) ![alt text](<data/findings/Screenshot 2025-02-02 at 10.00.17 AM.png>)
 ### Step 3: Handle Missing Values
 
