@@ -1,4 +1,4 @@
-# 🌙 Rice Datathon 2025 - OwlNighter (Winner of BEST AI APP)🦉  
+# Rice Datathon 2025 - OwlNighter (Winner of BEST AI APP)
 
 Welcome to the **OwlNighter** team repository for **Rice Datathon 2025**!  
 
